@@ -5,26 +5,128 @@
 }
 
 body {
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: 'Special Elite', cursive;
+  font-size: 18px;
+  background-image: url('../img/paper.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.debug {
+  background-color: pink;
 }
 
 /* typo */
-/* h1 {
-  font-family: 'Rock Salt', cursive;
-  font-size: 50px;
-  text-transform: uppercase;
-  padding-top: 40px;
-} */
+h1 {
+  font-size: 60px;
+  /* text-transform: uppercase; */
+  margin: 30px 0;
+}
 /* /typo */
+
+/* button */
+.btn {
+  border: 0;
+  font-size: 20px;
+}
 
 .page-wrapper {
   max-width: 1024px;
   margin: auto;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
-.list ul {
-  list-style: none;
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding: 30px;
+  border: 3px solid #333333;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  position: relative;
+}
 
+.list-container::before {
+  content: '';
+  border: 2px solid #353535;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+  border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+}
+
+.list, .list__add {
+  min-width: 300px;
+}
+
+.list li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 300px;
+  border: 1px solid black;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  padding: 20px;
+  margin: 20px 40px;
+  position: relative;
+}
+
+.list li::before {
+  content: '';
+  border: 2px solid #353535;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+  border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+}
+
+.list .item-delete {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ff6250;
+}
+
+.list__add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list__add input {
+  width: 80%;
+  border: 2px solid lime;
+  border-radius: 10px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+
+.list__add button:focus,
+.list__add input:focus {
+  outline: none;
+}
+
+.list__add .item-add {
+  font-size: 35px;
+  color: lime;
+  cursor: pointer;
+}
+
+.list__add button, .list__add input {
+  background-color: transparent;
 }

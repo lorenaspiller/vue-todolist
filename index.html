@@ -13,8 +13,10 @@
     <!-- /fontawesome -->
 
     <!-- google font -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Rock+Salt&display=swap" rel="stylesheet"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <!-- /google font -->
 
     <link rel="stylesheet" href="css/style.css">
@@ -26,16 +28,14 @@
       <h1> - shopping list -</h1>
       </header>
 
-      <div id="to-do-list" class="list">
-        <ul v-if="list.length > 0">
-          <li v-for="(item, index) in list">{{item}} <span><i class="far fa-times-circle" @click="deleteItem(index)"></i></span></li>
+      <div id="to-do-list" class="list-container">
+        <ul v-if="list.length > 0" class="list">
+          <li v-for="(item, index) in list">{{item}} <span><i class="far fa-times-circle item-delete" @click="deleteItem(index)"></i></span></li>
         </ul>
-
-        <input type="text" placeholder="add item" v-model="newItem" @keydown.13="addItem">
-        <button type="button" name="button" @click="addItem()">Add Item</button>
-
-
-
+        <div class="list__add">
+          <input type="text" placeholder="add item" v-model="newItem" @keydown.13="addItem">
+          <button class="btn" type="button" name="button" @click="addItem()"><i class="fas fa-plus-circle item-add"></i></button>
+        </div>
 
       </div>
     </div>
