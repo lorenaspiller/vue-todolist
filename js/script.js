@@ -9,7 +9,20 @@ Rifare l'esercizio della to do list come fatto assieme in classe:
 var app = new Vue({
   el: '#to-do-list',
   data: {
-    list: ["comprare zucchero"]
-
+    list: ["comprare zucchero", "comprare mascarpone", "comprare savoiardi", "comprare caffè", "comprare uova"],
+    newItem: ""
+  },
+  methods: {
+    deleteItem: function (itemIndex) {
+      // console.log(itemIndex);
+      this.list.splice(itemIndex, 1);
+    },
+    addItem: function () {
+      if (this.newItem !== "") {
+        this.list.push(this.newItem);
+        this.newItem = "";
+      }
+    }
   }
+
 })
